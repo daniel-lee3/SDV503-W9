@@ -1,6 +1,6 @@
 function wait(ms) {
     return new Promise(resolve => {
-        setTimeout(resolve, ms);
+        const timeout = setTimeout(resolve, ms);
     });
 }
 
@@ -36,7 +36,7 @@ async function main() {
     const user = await getUserFromServer(7);
     console.log("   got back:", user);
 
-    // ---------- D) Doing work in PARALLEL with Promis.all ----------
+    // ---------- D) Doing work in PARALLEL with Promise.all ----------
     // If threee jobs do not depend on each other, run them at the same time.
     // They all finish in the time of the SLOWEST one.
     console.log("\nD) parallel work with Promise.all");
@@ -52,8 +52,14 @@ async function main() {
     // We catch it with try / catch, just like a normal exception.
     console.log("\nE) handling errors with try / catch");
     try {
-
+        await new Promise((_, reject) => {
+            reject(new Error("something went wrong"));
+        });
     } catch(err) {
-        
+        console.log("   caught error:", err.message);
     }
+
+    console.log("\nDone\n");
 }
+
+main()

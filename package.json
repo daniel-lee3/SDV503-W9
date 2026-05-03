@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "promises": "node src/01-promises-async-await.js",
-    "json": "node src/02-json.js",
-    "data": "node src/03-data-modeling.js",
-    "trust": "node src/04-trust-boundary.js",
-    "algo": "node src/05-algorithms-data-structures.js",
-    "all": "node src/run-all.js"
+    "promises": "node 01-promises-async-await.js",
+    "json": "node 02-json.js",
+    "data": "node 03-data-modeling.js",
+    "trust": "node 04-trust-boundary.js",
+    "algo": "node 05-algorithms-data-structures.js",
+    "all": "node run-all.js"
   },
   "repository": {
     "type": "git",
